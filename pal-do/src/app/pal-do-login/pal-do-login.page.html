@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login to Pal-do</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list >
+    <ion-item class="vertical-space">
+       <ion-icon  class="center" name="done-all"></ion-icon>     
+    </ion-item>
+
+    <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input type="email" placeholder="pal@mail.com" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input type="password" placeholder="******" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <ion-button expand="block" color="primary" shape="round" (click) ="login()">Login</ion-button>
+  <ion-button fill="clear" color="primary" shape="round" (click) ="gotoSignup()">Don't have an account? create one</ion-button>
+
+</ion-content>

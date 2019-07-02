@@ -1,0 +1,7 @@
+{
+  "name": "pal-do",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
