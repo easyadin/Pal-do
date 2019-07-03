@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'pal-do-login', loadChildren: './pal-do-login/pal-do-login.module#PalDoLoginPageModule' },
   { path: 'pal-do-schedule', loadChildren: './pal-do-schedule/pal-do-schedule.module#PalDoSchedulePageModule' },
   { path: 'pal-do-create-schedule', loadChildren: './pal-do-create-schedule/pal-do-create-schedule.module#PalDoCreateSchedulePageModule' },
+  { path: 'edit-schedule', loadChildren: './edit-schedule/edit-schedule.module#EditSchedulePageModule' },
 ];
 
 @NgModule({

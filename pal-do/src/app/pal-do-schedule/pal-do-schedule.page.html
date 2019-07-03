@@ -8,14 +8,13 @@
   <ion-list>
      
     <ion-item-sliding *ngFor="let schedule of schedules">
-        <ion-card>
+     <ion-card>
       <ion-item >
-        <ion-label (click)="popupSchedule(schedule)" >
-          <h2 >{{schedule.data().title}}</h2>
+        <ion-label (click)="popupSchedule(schedule)">
+          <h2 class="title">{{schedule.data().title}}</h2>
           <h3 class="wrap-text">{{schedule.data().description}}</h3>
           <p *ngIf="schedule.data().date" [innerHTML]="getDate(schedule.data().date)"></p>
         </ion-label>
-        
       </ion-item>
 
       <ion-item-options side="end">
@@ -36,28 +35,3 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
-
-
-<ion-content padding class="popOverContent"  *ngIf="show">
-    <ion-list>
-        <ion-item>
-          <ion-label position="stacked"> Schedule Title</ion-label>
-          <ion-input type="text" [(ngModel)]="title"></ion-input>
-        </ion-item>
-    
-        <ion-item>
-            <ion-label position="stacked"> Schedule Description</ion-label>
-            <ion-textarea auto-grow="true" [(ngModel)]="description"></ion-textarea>
-          </ion-item>
-  
-          <ion-item>
-              <ion-label position="stacked"> Select Date</ion-label>
-             <ion-datetime display-format="MM/DD/YYYY" [(ngModel)]= "date"></ion-datetime>
-            </ion-item>
-            
-      </ion-list>
-
-          <ion-button expand="full" size="small" fill="outline" shape="round" color="primary" (click)="updateschedule()">update schedule</ion-button>
-    
- </ion-content>
-   

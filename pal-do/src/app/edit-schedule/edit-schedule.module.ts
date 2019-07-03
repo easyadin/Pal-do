@@ -5,14 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PalDoSchedulePage } from './pal-do-schedule.page';
-import { EditSchedulePage } from '../edit-schedule/edit-schedule.page';
-
+import { EditSchedulePage } from './edit-schedule.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PalDoSchedulePage
+    component: EditSchedulePage
   }
 ];
 
@@ -23,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents:[EditSchedulePage],
-  declarations: [PalDoSchedulePage,EditSchedulePage]
+  declarations: [EditSchedulePage]
 })
-export class PalDoSchedulePageModule {}
+export class EditSchedulePageModule {}

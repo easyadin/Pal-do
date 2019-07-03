@@ -7,8 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ViewScheduleComponent implements OnInit {
 
-  @Input() value:any;
-  constructor() { }
+  @Input() public titleData;
+  title: string
+
+  constructor() { 
+    this.title = this.titleData;
+  }
 
   ngOnInit() {}
 

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button color="primary" defaultHref="#" (click)="dismiss()"></ion-back-button>
+        </ion-buttons>
+    <ion-title>edit-schedule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked"> Schedule Title</ion-label>
+    <ion-input type="text">{{title}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked"> Schedule Description</ion-label>
+      <ion-textarea auto-grow="true">{{description}}</ion-textarea>
+  </ion-item>
+
+    <ion-item>
+       <ion-label position="stacked"> Select Date</ion-label>
+      <!-- <ion-datetime display-format="MM/DD/YYYY" [(ngModel)]= "date"*ngIf="schedule.data().date" [innerHTML]="getDate(schedule.data().date)"></ion-datetime>
+        -->
+    </ion-item>
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="closePopover()" class="close_btn">close</ion-button>
+          </ion-col>
+          <ion-col>
+              <ion-button expand="full" color="primary" (click)="updateschedule()" class="update_btn">update</ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { ToastController,NavController,PopoverController, NavParams } from "@ionic/angular";
-import { ViewScheduleComponent } from '../view-schedule/view-schedule.component';
+import { ToastController,NavController,ModalController } from "@ionic/angular";
+import { EditSchedulePage } from '../edit-schedule/edit-schedule.page';
 
 @Component({
   selector: 'app-pal-do-schedule',
@@ -13,12 +13,14 @@ export class PalDoSchedulePage implements OnInit {
   userId:string;
   schedules: any[] = [];
 
+  public title;
+
+
   private show:boolean = false;
 
   constructor(private navCtrl: NavController, 
     private toastCtrl: ToastController,
-    private popOverCtrl:PopoverController,
-    private navParams: NavParams) {
+    private modalCtrl: ModalController) {
     this.userId = firebase.auth().currentUser.uid;
     this.getSchedule();
    }
@@ -63,13 +65,22 @@ export class PalDoSchedulePage implements OnInit {
   }
 
 
-  async popupSchedule(schedule){
-    const popover = await this.popOverCtrl.create({
-      component: ViewScheduleComponent,    
-      componentProps:{schedule}
+   async popupSchedule(schedule){
+     this.title = schedule.data().title;
+    const modal = await this.modalCtrl.create({
+      component: EditSchedulePage,
+      componentProps: {
+        'title':schedule.data().title,
+        'description': schedule.data().description,
+        'date': schedule.data().date
+      }
     });
-    return await popover.present();
-  }
+
+     console.log(this.title); // remove this <--
+
+      return await modal.present();
+      }
+
 
     
   
