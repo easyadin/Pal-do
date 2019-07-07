@@ -13,10 +13,7 @@ export class PalDoSchedulePage implements OnInit {
   userId:string;
   schedules: any[] = [];
 
-  public title;
 
-
-  private show:boolean = false;
 
   constructor(private navCtrl: NavController, 
     private toastCtrl: ToastController,
@@ -66,7 +63,6 @@ export class PalDoSchedulePage implements OnInit {
 
 
    async popupSchedule(schedule){
-     this.title = schedule.data().title;
     const modal = await this.modalCtrl.create({
       component: EditSchedulePage,
       componentProps: {
@@ -75,9 +71,6 @@ export class PalDoSchedulePage implements OnInit {
         'date': schedule.data().date
       }
     });
-
-     console.log(this.title); // remove this <--
-
       return await modal.present();
       }
 

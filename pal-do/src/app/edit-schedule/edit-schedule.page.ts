@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { ModalController, NavController,NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit-schedule',
@@ -12,11 +12,12 @@ export class EditSchedulePage implements OnInit {
   @Input() descrption : string;
   @Input() date : string;
 
+  constructor( private modalCtrl: ModalController,private navCtrl: NavController,
+    private elementRef: ElementRef) {
+     
+     }
 
-  constructor( private modalCtrl: ModalController,private navCtrl: NavController) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   dismiss() {
     this.navCtrl.navigateBack('/pal-do-schedule');
@@ -30,7 +31,17 @@ closePopover(){
 }
 
 
-updateschedule(){
-  
+getDate(timestamp){
+  const date = timestamp.toDate();
+  return date.toLocaleDateString();
 }
+
+
+
+updateschedule(){
+}
+
+
+
+
 }

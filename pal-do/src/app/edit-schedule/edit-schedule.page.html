@@ -7,21 +7,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list>
   <ion-item>
     <ion-label position="stacked"> Schedule Title</ion-label>
-    <ion-input type="text">{{title}}</ion-input>
+    <ion-input value="{{title}}" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
       <ion-label position="stacked"> Schedule Description</ion-label>
-      <ion-textarea auto-grow="true">{{description}}</ion-textarea>
-  </ion-item>
+      <ion-textarea  value="{{description}}"  class="descript" auto-grow="true" autofocus="true"  ></ion-textarea> 
+ </ion-item>
 
     <ion-item>
        <ion-label position="stacked"> Select Date</ion-label>
-      <!-- <ion-datetime display-format="MM/DD/YYYY" [(ngModel)]= "date"*ngIf="schedule.data().date" [innerHTML]="getDate(schedule.data().date)"></ion-datetime>
-        -->
+      <ion-datetime placeholder="{{getDate(date)}}" display-format="MM/DD/YYYY"></ion-datetime>
+  
     </ion-item>
       
       <ion-grid>
@@ -34,4 +35,5 @@
             </ion-col>
         </ion-row>
       </ion-grid>
+    </ion-list>
 </ion-content>
